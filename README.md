@@ -30,42 +30,34 @@ content = """
 <title>My webserver</title>
 </head>
 <body>
-<h1>Top 5 Revenue Generating Companies<h1>
-<UL TYPE=“circle”>
-<LI> Accenture </LI>		
-<LI> Amazon </LI>
-<LI> Cognizant Technology Solutions </LI>
-<LI> HCLTech </LI>
-<LI> Vitol </LI>
-</UL>
+<h1>Top five Revenue generating Software Companies</h1>
+<ol>
+<li>Microsoft</li>
+<li>Oracle</li>
+<li>Salesforce</li>
+<li>IBM</li>
+<li>Intuit</li>
+</ol>
 </body>
 </html>
-"""
-```
-## README.md
-```
-"""
+
 class myhandler(BaseHTTPRequestHandler):
     def do_GET(self):
-
         print("request received")
         self.send_response(200)
         self.send_header('content-type', 'text/html; charset=utf-8')
         self.end_headers()
         self.wfile.write(content.encode())
-
-server_address = ('',8000)
+server_address = ('',8004)
 httpd = HTTPServer(server_address,myhandler)
 print("my webserver is running...")
 httpd.serve_forever()
 ```
-
 ## OUTPUT:
 
-![image](https://github.com/Irenejecinthamerlin/simplewebserver/assets/128350225/29f6d616-fa57-49c4-93be-66b93bc47d5f)
+![image](https://github.com/Irenejecinthamerlin/simplewebserver/assets/128350225/f6172783-2b0c-4ab7-80fc-07eeef221ff2)
 
 
-![image](https://github.com/Irenejecinthamerlin/simplewebserver/assets/128350225/6dd9df4b-0de6-4b1f-9eb9-735d57894b7a)
 
 
 
